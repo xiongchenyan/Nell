@@ -16,7 +16,11 @@ candidate entity ignored
 
 def WrapOneGloss(line,DocNo):
     sOut = ""
-    entity,surface,gloss = line.strip().split('\t')
+    vCol = line.strip().split('\t')
+    if len(vCol) < 3:
+        print "error line: " + line
+        return ""
+    entity,surface,gloss = vCol[:3]
     sOut += MakeTrecWebHead(DocNo) + '\t'
     sOut += '<title>%s</title>\n' %(entity)
     sOut += '<surface>%s</surface>\n' %(surface)
@@ -47,6 +51,8 @@ DocNo = 0
 
 for line in open(sys.argv[1]):
     sOut = WrapOneGloss(line,DocNo)
+    if sOut == '':
+        continue
     try:
         print >> out, sOut
         DocNo += 1
