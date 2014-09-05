@@ -21,7 +21,7 @@ def WrapOneGloss(line,DocNo):
         print "error line: " + line
         return ""
     entity,surface,gloss = vCol[:3]
-    sOut += MakeTrecWebHead(DocNo) + '\t'
+    sOut += MakeTrecWebHead(DocNo)
     sOut += '<title>%s</title>\n' %(entity)
     sOut += '<surface>%s</surface>\n' %(surface)
     sOut += '<body>%s</body>\n' %(gloss)
