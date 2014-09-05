@@ -32,7 +32,7 @@ def WrapOneGloss(line,DocNo):
     
     
 def MakeTrecWebHead(DocNo):
-    res = "<DOC>\n<DOCNO>%d</DOCNO>\n" %(DocNo)
+    res = "<DOC>\n<DOCNO>nell-gloss-%d</DOCNO>\n" %(DocNo)
     res += "<DOCHDR>\nhttp://fakeurl.com/%d\n</DOCHDR>\n" %(DocNo)  
     return res 
 
