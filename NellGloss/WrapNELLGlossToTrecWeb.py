@@ -21,7 +21,7 @@ def WrapOneGloss(line,DocNo):
         print "error line: " + line
         return ""
     entity,surface,gloss = vCol[:3]
-    sOut += MakeTrecWebHead(DocNo)
+    sOut += MakeTrecWebHead(entity.replace(':','-'))
     sOut += '<title>%s</title>\n' %(entity)
     sOut += '<surface>%s</surface>\n' %(surface)
     sOut += '<body>%s</body>\n' %(gloss)
@@ -31,9 +31,9 @@ def WrapOneGloss(line,DocNo):
     return sOut
     
     
-def MakeTrecWebHead(DocNo):
-    res = "<DOC>\n<DOCNO>nell-gloss-%d</DOCNO>\n" %(DocNo)
-    res += "<DOCHDR>\nhttp://fakeurl.com/%d\n</DOCHDR>\n" %(DocNo)  
+def MakeTrecWebHead(entity):
+    res = "<DOC>\n<DOCNO>%s</DOCNO>\n" %(entity)
+    res += "<DOCHDR>\nhttp://fakeurl.com/%s\n</DOCHDR>\n" %(entity)  
     return res 
 
 
