@@ -26,7 +26,7 @@ def WrapOneGloss(line,DocNo):
     sOut += '<surface>%s</surface>\n' %(surface)
     sOut += '<body>%s</body>\n' %(gloss)
     
-    sOut += '</Doc>\n'
+    sOut += '</DOC>\n'
     
     return sOut
     
