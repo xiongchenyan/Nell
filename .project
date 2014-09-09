@@ -3,6 +3,7 @@
 	<name>Nell</name>
 	<comment></comment>
 	<projects>
+		<project>cxMachineLearning</project>
 		<project>cxPyLib</project>
 	</projects>
 	<buildSpec>
